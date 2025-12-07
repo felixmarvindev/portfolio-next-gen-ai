@@ -1,3 +1,9 @@
+import PortfolioContent from "@/components/PortfolioContent";
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <main className="min-h-screen">
+      <PortfolioContent />
+    </main>
+  );
 }

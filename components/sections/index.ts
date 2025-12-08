@@ -7,3 +7,4 @@ export { EducationSection } from "./EducationSection";
 export { ProjectsSection } from "./ProjectsSection";
 export { CertificationsSection } from "./CertificationsSection";
 export { AchievementsSection } from "./AchievementsSection";
+export { ServicesSection } from "./ServicesSection";

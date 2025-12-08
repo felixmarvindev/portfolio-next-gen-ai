@@ -1004,6 +1004,32 @@ export type ABOUT_QUERYResult = {
   location: string | null;
 } | null;
 
+// Source: ./components/sections/AchievementsSection.tsx
+// Variable: ACHIEVEMENTS_QUERY
+// Query: *[_type == "achievement"] | order(date desc){  title,  type,  issuer,  date,  description,  image,  url,  featured,  order}
+export type ACHIEVEMENTS_QUERYResult = Array<{
+  title: string | null;
+  type: "award" | "hackathon" | "milestone" | "open-source" | "other" | "publication" | "recognition" | "speaking" | null;
+  issuer: string | null;
+  date: string | null;
+  description: string | null;
+  image: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  url: string | null;
+  featured: boolean | null;
+  order: number | null;
+}>;
+
 // Source: ./components/sections/CertificationsSection.tsx
 // Variable: CERTIFICATIONS_QUERY
 // Query: *[_type == "certification"] | order(issueDate desc){  name,  issuer,  issueDate,  expiryDate,  credentialId,  credentialUrl,  logo,  description,  skills[]->{name, category},  order}
@@ -1301,6 +1327,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_id == \"singleton-profile\"][0]{\n    _id,\n    _type,\n    _createdAt,\n    _updatedAt,\n    _rev,\n    firstName,\n    lastName,\n    headline,\n    shortBio,\n    email,\n    phone,\n    location,\n    availability,\n    socialLinks,\n    yearsOfExperience,\n    profileImage\n  }": CHAT_PROFILE_QUERYResult;
     "*[_id == \"singleton-profile\"][0]{\n  firstName,\n  lastName,\n  fullBio,\n  yearsOfExperience,\n  stats,\n  email,\n  phone,\n  location\n}": ABOUT_QUERYResult;
+    "*[_type == \"achievement\"] | order(date desc){\n  title,\n  type,\n  issuer,\n  date,\n  description,\n  image,\n  url,\n  featured,\n  order\n}": ACHIEVEMENTS_QUERYResult;
     "*[_type == \"certification\"] | order(issueDate desc){\n  name,\n  issuer,\n  issueDate,\n  expiryDate,\n  credentialId,\n  credentialUrl,\n  logo,\n  description,\n  skills[]->{name, category},\n  order\n}": CERTIFICATIONS_QUERYResult;
     "*[_type == \"education\"] | order(endDate desc, startDate desc){\n  institution,\n  degree,\n  fieldOfStudy,\n  startDate,\n  endDate,\n  current,\n  gpa,\n  description,\n  achievements,\n  logo,\n  website,\n  order\n}": EDUCATION_QUERYResult;
     "*[_type == \"experience\"] | order(startDate desc){\n  company,\n  position,\n  employmentType,\n  location,\n  startDate,\n  endDate,\n  current,\n  description,\n  responsibilities,\n  achievements,\n  technologies[]->{name, category},\n  companyLogo,\n  companyWebsite\n}": EXPERIENCE_QUERYResult;

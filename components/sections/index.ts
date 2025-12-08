@@ -6,3 +6,4 @@ export { ExperienceSection } from "./ExperienceSection";
 export { EducationSection } from "./EducationSection";
 export { ProjectsSection } from "./ProjectsSection";
 export { CertificationsSection } from "./CertificationsSection";
+export { AchievementsSection } from "./AchievementsSection";

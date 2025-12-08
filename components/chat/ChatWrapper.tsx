@@ -21,6 +21,7 @@ const CHAT_PROFILE_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
     yearsOfExperience,
     profileImage
   }`);
+  
 
 async function ChatWrapper() {
   const { data: profile } = await sanityFetch({ query: CHAT_PROFILE_QUERY });

@@ -14,6 +14,8 @@ import { schema } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 import { UserIcon } from "@sanity/icons";
 
+console.log(projectId, dataset);
+
 export default defineConfig({
   basePath: "/studio",
   projectId,

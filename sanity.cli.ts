@@ -15,4 +15,7 @@ export default defineCliConfig({
     generates: "./sanity.types.ts", // path to the output file for generated type definitions
     overloadClientMethods: true, // set to false to disable automatic overloading the sanity client
   },
+  deployment: {
+    appId: "lhdnygm1t4rai05ka8hw8mq6",
+  },
 });

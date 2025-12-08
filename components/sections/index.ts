@@ -8,3 +8,4 @@ export { ProjectsSection } from "./ProjectsSection";
 export { CertificationsSection } from "./CertificationsSection";
 export { AchievementsSection } from "./AchievementsSection";
 export { ServicesSection } from "./ServicesSection";
+export { BlogSection } from "./BlogSection";
